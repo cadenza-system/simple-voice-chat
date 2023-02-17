@@ -43,8 +43,8 @@ sourceSets {
 
 dependencies {
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
-    implementation "org.bukkit:craftbukkit:${bukkit_version}"
-
+//    implementation "org.bukkit:craftbukkit:${bukkit_version}"
+    compileOnly 'org.spigotmc:spigot:1.16.5-R0.1-SNAPSHOT'
     implementation "net.kyori:adventure-api:${adventure_api_version}"
     shadow "net.kyori:adventure-api:${adventure_api_version}"
     implementation "net.kyori:adventure-text-serializer-gson:${adventure_api_version}"

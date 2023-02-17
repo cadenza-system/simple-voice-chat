@@ -42,6 +42,7 @@ public final class Voicechat extends JavaPlugin {
     public static BukkitVoicechatServiceImpl apiService;
     public static NetManager netManager;
 
+    public static boolean isDisabled = false;
     @Override
     public void onEnable() {
         INSTANCE = this;

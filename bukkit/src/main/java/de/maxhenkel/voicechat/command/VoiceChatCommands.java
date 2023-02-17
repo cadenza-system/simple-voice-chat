@@ -29,6 +29,13 @@ public class VoiceChatCommands implements CommandExecutor {
         if (checkNoVoicechat(commandSender)) {
             return true;
         }
+
+        if (args[0].equalsIgnoreCase("enable")) {
+            return this.enable(commandSender);
+        } else if (args[0].equalsIgnoreCase("disable")) {
+            return this.disable(commandSender);
+        }
+
         if (!(commandSender instanceof Player)) {
             return true;
         }
@@ -59,6 +66,21 @@ public class VoiceChatCommands implements CommandExecutor {
         commandSender.sendMessage("/voicechat [invite] <target>");
         commandSender.sendMessage("/voicechat [join] <group> [<password>]");
         commandSender.sendMessage("/voicechat [leave]");
+        commandSender.sendMessage("/voicechat [enable]");
+        commandSender.sendMessage("/voicechat [disable]");
+        return true;
+    }
+
+
+    private boolean enable(CommandSender sender) {
+        Voicechat.isDisabled = false;
+        sender.sendMessage("enabled voice chat");
+        return true;
+    }
+
+    private boolean disable(CommandSender sender) {
+        Voicechat.isDisabled = true;
+        sender.sendMessage("disabled voice chat");
         return true;
     }
 

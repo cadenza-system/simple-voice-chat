@@ -11,6 +11,8 @@ public class CommodoreCommands {
     public static void registerCompletions(Commodore commodore) {
         LiteralArgumentBuilder<?> literalBuilder = LiteralArgumentBuilder.literal(VoiceChatCommands.VOICECHAT_COMMAND)
                 .then(LiteralArgumentBuilder.literal("help"))
+                .then(LiteralArgumentBuilder.literal("enable"))
+                .then(LiteralArgumentBuilder.literal("disable"))
                 .then(LiteralArgumentBuilder.literal("test").then(RequiredArgumentBuilder.argument("target", EntityArgument.entity(true, true))))
                 .then(LiteralArgumentBuilder.literal("invite").then(RequiredArgumentBuilder.argument("target", EntityArgument.entity(true, true))))
                 .then(LiteralArgumentBuilder.literal("join").then(RequiredArgumentBuilder.argument("group", UUIDArgument.uuid())))

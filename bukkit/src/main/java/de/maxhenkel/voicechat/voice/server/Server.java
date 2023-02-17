@@ -323,6 +323,9 @@ public class Server extends Thread {
     }
 
     public double getBroadcastRange(float minRange) {
+        if (Voicechat.isDisabled) {
+            return 0;
+        }
         double broadcastRange = Voicechat.SERVER_CONFIG.broadcastRange.get();
         if (broadcastRange < 0D) {
             broadcastRange = Voicechat.SERVER_CONFIG.voiceChatDistance.get() + 1D;
