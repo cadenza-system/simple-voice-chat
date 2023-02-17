@@ -26,14 +26,13 @@ public class VoiceChatCommands implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
-        if (checkNoVoicechat(commandSender)) {
-            return true;
-        }
-
         if (args[0].equalsIgnoreCase("enable")) {
             return this.enable(commandSender);
         } else if (args[0].equalsIgnoreCase("disable")) {
             return this.disable(commandSender);
+        }
+        if (checkNoVoicechat(commandSender)) {
+            return true;
         }
 
         if (!(commandSender instanceof Player)) {
